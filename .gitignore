@@ -4,4 +4,4 @@ __pycache__/
 output/
 
 
-config/token.txt
+configs/token.txt
