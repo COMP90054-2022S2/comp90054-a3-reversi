@@ -47,11 +47,11 @@ The purpose of this project is to implement a Reversi Autonomous Agent that can 
 
 This is a **group project** of 3 or 4 members. Now that you have a repo, the next thing to do is to register your team in the [Project Contest Team Registration Form](https://forms.gle/d3jG93PkZx8Ag9kQ9) and tell the other students to join the team in GitHub Classroom. 
 
-**Your first task** is to get familiar with the code by developing an simple agent based on any one of the techniques listed below. This is an **individual** task. By completing this task, your teams should be able to have 3 or 4 decent agents to play with each other. In addition, each team member should understand more about the game and code.
+**Your first task** is to get familiar with the code by developing an simple agent based on any one of the techniques listed below. This is an **individual** task. By completing this task, your teams should be able to have 2 or 3 decent agents to play with each other. In addition, each team member should understand more about the game and code.
 
 **Your second task** is to develop an autonomous Reversi agent team to play the **Reversi Contest** by suitably modifying file [`agents/t_XXX/myTeam.py`](agents/t_000/myTeam.py) (and maybe some other auxiliarly files you may implement). The code submitted should be internally commented at high standards and be error-free and _never crash_. 
 
-In your final submission, you have to use at **least 3 AI-related techniques** (**4 techniques at least for groups of 4**) that have been discussed in the subject or explored by you independently, and you can combine them in any form. **We won't accept a final submission with less than 3 or 4 techniques**. Some candidate techniques that you may consider are:
+In your final submission, you have to use at **least 2 AI-related techniques** (**2 techniques at least for groups of 3**) that have been discussed in the subject or explored by you independently, and you can combine them in any form. **We won't accept a final submission with less than 2 or 3 techniques**. Some candidate techniques that you may consider are:
 
 1. Blind or Heuristic Search Algorithms (using general or Reversi specific heuristic functions).
 2. Classical Planning (PDDL and calling a classical planner).
