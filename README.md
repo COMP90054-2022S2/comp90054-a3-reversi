@@ -28,6 +28,7 @@ The purpose of this project is to implement a Reversi Autonomous Agent that can 
      * [Preliminary submission (Monday week 10)](#preliminary-submission-monday-week-10)
      * [Wiki and Final submission (Monday week 12)](#wiki-and-final-submission-monday-week-12)
      * [Video (Thursday week 12)](#video-thursday-week-12)
+     * [Q&As](#questions-and-answers)
   * [3. Pre-contest feedback tournaments](#3-pre-contest-feedback-tournaments)
   * [4. Marking criteria](#4-marking-criteria)
   * [5. Important information](#5-important-information)
@@ -121,7 +122,7 @@ In the **final submission** (23:59 Monday 18th October, Week 12) you are to subm
 
 Submit your project substantially before the deadline, preferably one day before. Submitting close to the deadline could be risky and you may fail to submit on time, for example due to loss of Internet connection or server delays. There will be **no extensions** based on these unforeseen problems. 
 
-### Q&As
+### Questions and Answers
 * How to import other customized python files?
     * You can import with `agents.t_XXX.your_python_file_name`
 * Where to save or load your local files?
