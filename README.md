@@ -45,7 +45,7 @@ The purpose of this project is to implement a Reversi Autonomous Agent that can 
 
 ## 1. Your task
 
-This is a **group project** of 3 or 4 members. Now that you have a repo, the next thing to do is to register your team in the [Project Contest Team Registration Form](https://forms.gle/d3jG93PkZx8Ag9kQ9) and tell the other students to join the team in GitHub Classroom. 
+This is a **group project** of 2 or 3 members. Now that you have a repo, the next thing to do is to register your team in the [Project Contest Team Registration Form](https://forms.gle/d3jG93PkZx8Ag9kQ9) and tell the other students to join the team in GitHub Classroom. 
 
 **Your first task** is to get familiar with the code by developing an simple agent based on any one of the techniques listed below. This is an **individual** task. By completing this task, your teams should be able to have 2 or 3 decent agents to play with each other. In addition, each team member should understand more about the game and code.
 
