@@ -55,8 +55,8 @@ def valid_move(action):
         return False 
     elif not type(action[1]) == int:
         return False 
-    elif int(action[0]) <0 and int(action[0]) >= GRID_SIZE:
+    elif int(action[0]) <0 or int(action[0]) >= GRID_SIZE:
         return False 
-    elif int(action[1]) <0 and int(action[1]) >= GRID_SIZE:
+    elif int(action[1]) <0 or int(action[1]) >= GRID_SIZE:
         return False 
     else: return True

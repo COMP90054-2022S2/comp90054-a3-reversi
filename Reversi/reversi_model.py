@@ -52,26 +52,27 @@ class ReversiGameRule(GameRule):
             return state
         else:
             next_state = copy.deepcopy(state)
-            x,y = action
             update_color = self.agent_colors[agent_id]
-            next_state.board[x][y] = update_color
-            for direction in [(1,0),(-1,0),(0,1),(0,-1)]:
-                temp_pos = (x,y)
-                temp_pos = tuple(map(operator.add,temp_pos,direction))
-                update_list = []
+            next_state.board[action[0]][action[1]] = update_color
+            # iterate over all 8 directions and check pieces that require updates
+            for direction in [(1,0), (-1,0), (0,1), (0,-1), (1,1), (1,-1), (-1,1), (-1,-1)]:
+                cur_pos = (action[0] + direction[0], action[1] + direction[1])
+                update_list = list()
                 flag = False
-                while temp_pos in self.validPos:
-                    temp_x,temp_y = temp_pos
-                    if state.board[temp_x][temp_y] == update_color:
+                # Only searching for updates if the next piece in the direction is from the agent's opponent
+                # if next_state.board[cur_pos[0]][cur_pos[1]] == self.agent_colors[(agent_id+1)%2]:
+                while cur_pos in self.validPos and next_state.board[cur_pos[0]][cur_pos[1]] != Cell.EMPTY:
+                    if next_state.board[cur_pos[0]][cur_pos[1]] == update_color:
                         flag = True
                         break
-                    update_list.append(temp_pos)
-                    temp_pos = tuple(map(operator.add,temp_pos,direction))
-                if flag:
-                    for x,y in update_list:
-                        next_state.board[x][y] = update_color
-            return next_state 
-    
+                    update_list.append(cur_pos)
+                    cur_pos = (cur_pos[0] + direction[0], cur_pos[1] + direction[1])
+                if flag and len(update_list) != 0:
+                    for i,j in update_list:
+                        next_state.board[i][j] = update_color
+            return next_state
+
+
     def getNextAgentIndex(self):
         return (self.current_agent_index + 1) % self.num_of_agent
 
@@ -84,30 +85,22 @@ class ReversiGameRule(GameRule):
 
     def getLegalActions(self, game_state, agent_id):
         actions = []
-        print(f"Current game state: \n{boardToString(game_state.board,GRID_SIZE)}")
+        # print(f"Current game state: \n{boardToString(game_state.board,GRID_SIZE)}")
         for x in range(GRID_SIZE):
             for y in range(GRID_SIZE):
                 if game_state.board[x][y] == Cell.EMPTY:
                     pos = (x,y)
-                    for direction in [(1,0),(-1,0),(0,1),(0,-1)]:
-                        # print(pos)
+                    for direction in [(1,0), (-1,0), (0,1), (0,-1), (1,1), (1,-1), (-1,1), (-1,-1)]:
                         temp_pos = tuple(map(operator.add,pos,direction))
-                        # print(direction)
-                        # print(temp_pos)
-                        temp_color = self.agent_colors[agent_id]
-                        flag = False
-                        while temp_pos in self.validPos:
-                            if game_state.getCell(temp_pos) == Cell.EMPTY:
-                                break
-                            if not temp_color == game_state.getCell(temp_pos):
-                                flag = True
-                            if temp_color == game_state.getCell(temp_pos) and not flag:
-                                break
-                            if temp_color == game_state.getCell(temp_pos) and flag:
-                                actions.append(pos)
-                            temp_pos = tuple(map(operator.add,temp_pos,direction))
-                            # print(temp_pos)
-        if actions == []:
+                        if temp_pos in self.validPos and game_state.getCell(temp_pos) != Cell.EMPTY and game_state.getCell(temp_pos) != self.agent_colors[agent_id]:
+                            while temp_pos in self.validPos:
+                                if game_state.getCell(temp_pos) == Cell.EMPTY:
+                                    break
+                                if game_state.getCell(temp_pos) == self.agent_colors[agent_id]:
+                                    actions.append(pos)
+                                    break
+                                temp_pos = tuple(map(operator.add,temp_pos,direction))
+        if len(actions) == 0:
             actions.append("Pass")
         return actions
 
