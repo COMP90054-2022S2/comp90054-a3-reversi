@@ -96,7 +96,7 @@ In the **preliminary submission**, you are to:
  
 1. Submit your first working version of your solution, by tagging the commit with the tag name as your student id. 
 2. All your files should be in your submission directory (`agents/t_XXX/`). The file `agents/t_XXX/myTeam.py` should contain your AI-based Reversi agent as the individual agent for performance evaluation. We would highly recommend using your **own branch** for this task. 
-3. We will clone your tag and run your code against a random player for 5 games. Your mark will be the number of games that your agent won.
+3. We will clone your tag and run your code against a random player for 100 games. Your mark will be awarded based on your winning ratio.
 4. **Please use your own github account to commit your code.** Otherwise, you would not be able to get marks.
 5. Please make sure the commit in your submitted (tag) is your own original work. 
 
