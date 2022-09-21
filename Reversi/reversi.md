@@ -59,7 +59,9 @@ There will be an initial start-up allowance of 15 seconds. Your agent will need 
 
 ## Getting Started
 
-**Make sure the version of Python used is >= 3.8, and that you have installed func-timeout (e.g. ```pip install func-timeout```)**
+Make sure the version of Python used is **>= 3.8** (we are going to use python 3.8 run your code, which you can find in [Dockerfile](docker\Dockerfile)), and that you have installed:
+* func-timeout: ```pip install func-timeout```
+* gitpython: ```pip install gitpython```
 
 By default, you can run a game against two random agents with the following:
 
