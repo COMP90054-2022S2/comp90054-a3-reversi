@@ -9,6 +9,7 @@
 import random, copy, time
 from   template     import GameState
 from   func_timeout import func_timeout, FunctionTimedOut
+import traceback
     
 # CONSTANTS ----------------------------------------------------------------------------------------------------------#
 
@@ -113,6 +114,7 @@ class Game:
                         selected = func_timeout(WARMUP if action_counter < len(self.agents) else self.time_limit, 
                                                 agent.SelectAction,args=(actions_copy, gs_copy))
                     except:
+                        traceback.print_exc()
                         selected = None
                     if not selected in actions:
                         #TODO: Let user know more specifically what caused the timeout.
