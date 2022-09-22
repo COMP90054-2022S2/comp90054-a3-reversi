@@ -19,7 +19,7 @@ class ReversiState(GameState):
     # initialise the board with 2 black and 2 white pieces
     def _initialiseBoard(self):
         half = int(self.grid_size/2)
-        print(half)
+        # print(half)
         self.next_player_color = Cell.BLACK
         self.board[half-1][half-1] = Cell.WHITE
         self.board[half][half-1] = Cell.BLACK
