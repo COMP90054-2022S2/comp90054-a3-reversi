@@ -198,9 +198,7 @@ class TextDisplayer(Displayer):
         pass 
 
     def ExcuteAction(self,i,move, game_state):
-        print(f"\nAgent {i} has chosen the following move: {move}\n")
-        
-        print(f"The next player color is: {game_state.next_player_color}\n")
+        print(f"\nAgent {i} ({game_state.agent_colors[i]}) has chosen the following move: {move}\n")
         print(f"The current board is: \n{boardToString(game_state.board,game_state.grid_size)}")
         print ("--------------------------------------------------------------------")
         
