@@ -44,7 +44,7 @@ class ReversiGameRule(GameRule):
         
         self.current_agent_index = random.choice(range(self.num_of_agent))
         self.agent_colors.update({self.current_agent_index:Cell.BLACK,self.getNextAgentIndex():Cell.WHITE})
-        self.validPos = self.validPos()
+        self.validPos = self._validPos()
         return ReversiState(self.num_of_agent,GRID_SIZE,self.agent_colors)
 
     def generateSuccessor(self, state, action, agent_id):
@@ -104,7 +104,7 @@ class ReversiGameRule(GameRule):
             actions.append("Pass")
         return actions
 
-    def validPos(self):
+    def _validPos(self):
         pos_list = []
         for x in range(GRID_SIZE):
             for y in range(GRID_SIZE):
