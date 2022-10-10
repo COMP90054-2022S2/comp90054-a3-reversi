@@ -48,10 +48,11 @@ class ReversiGameRule(GameRule):
         return ReversiState(self.num_of_agent,GRID_SIZE,self.agent_colors)
 
     def generateSuccessor(self, state, action, agent_id):
+        next_state = copy.deepcopy(state)
         if action == "Pass":
-            return state
+            # no changes needed
+            pass
         else:
-            next_state = copy.deepcopy(state)
             update_color = self.agent_colors[agent_id]
             next_state.board[action[0]][action[1]] = update_color
             # iterate over all 8 directions and check pieces that require updates
@@ -70,8 +71,8 @@ class ReversiGameRule(GameRule):
                 if flag and len(update_list) != 0:
                     for i,j in update_list:
                         next_state.board[i][j] = update_color
-            return next_state
-
+        next_state.next_player_color = Cell.BLACK if state.next_player_color == Cell.WHITE else Cell.WHITE
+        return next_state
 
     def getNextAgentIndex(self):
         return (self.current_agent_index + 1) % self.num_of_agent
