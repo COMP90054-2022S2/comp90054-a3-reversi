@@ -64,15 +64,14 @@ def gitCloneTeam(team_info, output_path):
     with open(GIT_TOKEN_PATH, "r") as f:
         token = f.read()
     
-
     if not os.path.exists(output_path):
         os.makedirs(output_path)    
     print(team_info)
     clone_url = f"https://{token}@{team_info['url'].replace('https://','')}"
-    team_name = str(team_info['team_name'])
-    repo_path = f"{output_path}/{str(team_info['team_name'])}"
+    team_name = str(team_info['agent'].split('.')[1])
+    repo_path = f"{output_path}/{team_name}"
     commit_id = team_info['commit_id']
-    branch = "main"
+    branch = "master"
 
     logging.info(f'Checking {repo_path} contains git repo or not.')
     submission_time='N/A'
@@ -126,7 +125,7 @@ def gitCloneTeam(team_info, output_path):
         except:
             traceback.print_exc()
         shutil.rmtree(f"{repo_path}")
-    team_info.update({'copy_files':os.path.exists(f"agents/{team_name}/player.py")})
+    team_info.update({'copy_files':os.path.exists(f"agents/{team_name}")})
     return team_info
 
 
@@ -478,8 +477,8 @@ if __name__ == '__main__':
     msg = ""
     options = loadParameter()
     matches = run(options,msg)
-    # with open("output/matches.json",'w') as f:
-    #     json.dump(matches,f)  
+    with open("output/matches.json",'w') as f:
+        json.dump(matches,f)  
 
 # END FILE -----------------------------------------------------------------------------------------------------------#
 
