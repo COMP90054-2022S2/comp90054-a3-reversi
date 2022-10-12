@@ -51,7 +51,7 @@ This is a **group project** of 2 or 3 members. Now that you have a repo, the nex
 
 **Your second task** is to develop an autonomous Reversi agent team to play the **Reversi Contest** by suitably modifying file [`agents/t_XXX/myTeam.py`](agents/t_000/myTeam.py) (and maybe some other auxiliarly files you may implement). The code submitted should be internally commented at high standards and be error-free and _never crash_. 
 
-In your final submission, you have to use at **least 2 AI-related techniques** (**2 techniques at least for groups of 3**) that have been discussed in the subject or explored by you independently, and you can combine them in any form. **We won't accept a final submission with less than 2 or 3 techniques**. Some candidate techniques that you may consider are:
+In your final submission, you have to use at **least 2 AI-related techniques** (**3 techniques at least for groups of 3**) that have been discussed in the subject or explored by you independently, and you can combine them in any form. **We won't accept a final submission with less than 2 or 3 techniques**. Some candidate techniques that you may consider are:
 
 1. Blind or Heuristic Search Algorithms (using general or Reversi specific heuristic functions).
 2. Classical Planning (PDDL and calling a classical planner).
